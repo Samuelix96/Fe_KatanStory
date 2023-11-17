@@ -1,4 +1,37 @@
+/** @format */
+
 .parallax-article {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.article-image {
+  flex: 1;
+  text-align: center;
+}
+
+.article-image img {
+  max-width: 100%;
+}
+
+.article-description {
+  flex: 1;
+  padding: 20px;
+  background: rgba(126, 77, 77, 0.8);
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.article-description :where(h1, h3) {
+  color: rgb(182, 148, 99);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+@media screen and (min-width: 600px) {
+  .parallax-article {
     display: flex;
     align-items: center;
     padding: 50px 0;
@@ -7,26 +40,4 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
-  .article-image {
-    flex: 1;
-    text-align: center;
-  }
-  
-  .article-image img {
-    max-width: 100%;
-  }
-  
-  .article-description {
-    flex: 1;
-    padding: 20px;
-    background: rgba(126, 77, 77, 0.8);
-  }
-  .reverse {
-    flex-direction: row-reverse;
-  }
-
-  .article-description :where(h1, h3 ) {
-    color: rgb(182, 148, 99);
-    font-family:'Courier New', Courier, monospace
-  }
+}

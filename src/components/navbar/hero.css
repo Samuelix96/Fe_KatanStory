@@ -5,6 +5,22 @@
   border-radius: 100%;
   padding-block: 3px;
 }
+.hero__text {
+  color: white;
+}
+.hero__text h1 {
+  font-family: fantasy;
+  border: 2px solid;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}
+.subtitle {
+  font-family: fantasy;
+
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}
 .sector-hero {
   background-size: cover;
   background-repeat: no-repeat;

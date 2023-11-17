@@ -96,7 +96,7 @@ const NavigationHome = () => {
           id='navbarScroll'>
           <Nav
             className='m-auto d-flex justify-content-center align-items-center '
-            style={{ maxHeight: '150px' }}
+            style={{ maxHeight: '200px' }}
             navbarScroll>
             <Link
               className=' home_nav link-underline link-underline-opacity-0 p-3 text-dark fs-5 mx-2'
