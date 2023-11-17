@@ -60,12 +60,15 @@ const ArmorCard = ({
       <Card
         className='text-light'
         style={{ width: '18rem' }}>
-        <Card.Img
-          className='armor-card'
-          variant='top'
-          src={img}
-          alt={title}
-        />
+        <a href={`detailarmor/${id}`}>
+          <Card.Img
+            className='armor-card'
+            variant='top'
+            src={img}
+            alt={title}
+          />
+        </a>
+
         <Card.Body className='cards-color'>
           <a
             className=' bg-c-lite-green p-2 rounded-2 text-light link-underline link-underline-opacity-0 link-dark'
@@ -73,7 +76,7 @@ const ArmorCard = ({
             <Search /> Detail Pages
           </a>
           <Card.Title className='my-2 fst-italic'>{title} </Card.Title>
-          <Card.Text>{description}</Card.Text>
+          <Card.Text>{subtitle}</Card.Text>
           <Card.Text
             className='d-inline-block text-truncate'
             style={{ width: '265px' }}>

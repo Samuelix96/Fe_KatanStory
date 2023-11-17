@@ -21,6 +21,7 @@ const SingleDetailArmor = ({
   armor,
   mask,
   id,
+  subtitle,
   description,
   price,
   title,
@@ -28,14 +29,14 @@ const SingleDetailArmor = ({
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(addCart({ id: id, description, img, title, price }));
+    dispatch(addCart({ id: id, description, subtitle, img, title, price }));
     toast.success('Element added successfully to cart');
   };
 
   console.log('SONO NELLA PAGE DETAIL', id);
 
   const handleAddToWish = () => {
-    dispatch(addWish({ id: id, img, description, title, price }));
+    dispatch(addWish({ id: id, img, description, subtitle, title, price }));
     toast.info('Element added successfully to Wish');
   };
 

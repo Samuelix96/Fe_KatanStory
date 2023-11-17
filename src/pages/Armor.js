@@ -357,7 +357,7 @@ const Armor = () => {
               </>
             ) : null}
             <Row>
-              <Col className='d-flex justify-content-between flex-wrap gap-2'>
+              <Col className=' armor-colu d-flex justify-content-between flex-wrap gap-2'>
                 {searchTerm && isSearchSuccess ? (
                   armorToDisplay?.map(item => (
                     <ArmorCard
@@ -367,6 +367,8 @@ const Armor = () => {
                       category={item.category}
                       img={item.img}
                       id={item._id}
+                      subtitle={item.subtitle}
+                      description={item.description}
                     />
                   ))
                 ) : isPostSuccess ? (
@@ -378,6 +380,8 @@ const Armor = () => {
                       category={item.category}
                       img={item.img}
                       id={item._id}
+                      subtitle={item.subtitle}
+                      description={item.description}
                     />
                   ))
                 ) : IsPostError ? (

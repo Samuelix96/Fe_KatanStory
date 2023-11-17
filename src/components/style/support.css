@@ -17,3 +17,11 @@
   background-color: rgba(0, 0, 0, 0.53);
   color: white;
 }
+@media screen and (max-width: 615px) {
+  .supp-colu {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+}

@@ -381,8 +381,8 @@ const AncientKatane = () => {
             />
           </div>
 
-          <Row>
-            <Col className='d-flex gap-3 justify-content-between flex-wrap'>
+          <Row className=''>
+            <Col className='new-colu d-flex gap-3 justify-content-between flex-wrap'>
               {searchTerm && isSearchSuccess ? (
                 katanasToDisplay.map(item => (
                   <SingleAncientKatana
@@ -393,6 +393,7 @@ const AncientKatane = () => {
                     img={item.img}
                     id={item._id}
                     image2={item.image2}
+                    description={item.description}
                   />
                 ))
               ) : isPostSuccess ? (
@@ -405,6 +406,7 @@ const AncientKatane = () => {
                     img={item.img}
                     id={item._id}
                     image2={item.image2}
+                    description={item.description}
                   />
                 ))
               ) : IsPostError ? (

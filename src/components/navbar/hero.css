@@ -15,16 +15,11 @@
   background-color: rgba(0, 0, 0, 0.53);
   color: white;
 }
-.subtitle {
-  font-family: fantasy;
 
-  background-color: rgba(0, 0, 0, 0.53);
-  color: white;
-}
 .sector-hero {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   font-family: Papyrus, fantasy;
-  background-image: url(https://img.freepik.com/free-vector/watercolor-chinese-style-background_52683-96085.jpg?w=1380&t=st=1700078856~exp=1700079456~hmac=3a07c7cefb54d2b0ebf82378987abc52c3fbfc372f88900543529ffd4c0d54f5);
+  background-image: url(https://worqiq.com/wp-content/uploads/2017/11/japan.png);
 }

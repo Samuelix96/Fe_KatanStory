@@ -19,16 +19,16 @@ import { useSession } from '../../hooks/AuthSession';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 
-const SingleSupport = ({ img, id, title, subtitle, price }) => {
+const SingleSupport = ({ img, id, title, subtitle, description, price }) => {
   const dispatch = useDispatch();
   const session = useSession();
   const handleAddToWish = () => {
-    dispatch(addWish({ id: id, img, title, subtitle, price }));
+    dispatch(addWish({ id: id, img, title, subtitle, price, description }));
     toast.info('Added to Wish successfuly');
   };
 
   const handleAddToCart = () => {
-    dispatch(addCart({ id: id, title, price, img, subtitle }));
+    dispatch(addCart({ id: id, title, price, img, subtitle, description }));
     toast.success('Added to Cart successfuly');
   };
 
@@ -49,11 +49,14 @@ const SingleSupport = ({ img, id, title, subtitle, price }) => {
       <Card
         className='text-light'
         style={{ width: '18rem' }}>
-        <Card.Img
-          className='img_supp'
-          variant='top'
-          src={img}
-        />
+        <a href={`/detailsupport/${id}`}>
+          <Card.Img
+            className='img_supp'
+            variant='top'
+            src={img}
+          />
+        </a>
+
         <Card.Body className='suppo-body'>
           <a
             className=' link-underline link-underline-opacity-0 text-info d-flex justify-content-end me-3 align-items-center gap-1'
@@ -61,8 +64,9 @@ const SingleSupport = ({ img, id, title, subtitle, price }) => {
             <Search /> Read More
           </a>{' '}
           <Card.Title className='fs-7'>{title}</Card.Title>
-          <Card.Text className='fs-5'>{subtitle}</Card.Text>
+          <Card.Text className='d-none fs-5'>{subtitle}</Card.Text>
           <Card.Text className='d-none'>{id}</Card.Text>
+          <Card.Text className=''>{description}</Card.Text>
           <Card.Text>{price.toFixed(2)}$</Card.Text>
           <CardFooter className='d-flex gap-3 mx-3'>
             <Button

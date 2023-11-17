@@ -347,7 +347,7 @@ const Helmet = () => {
               ) : null}
             </div>
             <Row>
-              <Col className='d-flex justify-content-between flex-wrap gap-3'>
+              <Col className='helmet-colu d-flex justify-content-between flex-wrap gap-3'>
                 {search && isSearchSuccess ? (
                   helmetsToDisplay.map(item => (
                     <SingleHelmet
@@ -355,6 +355,7 @@ const Helmet = () => {
                       title={item.title}
                       price={item.price}
                       category={item.category}
+                      description={item.description}
                       img={item.img}
                       subtitle={item.subtitle}
                       id={item._id}
@@ -367,6 +368,7 @@ const Helmet = () => {
                       title={item.title}
                       price={item.price}
                       category={item.category}
+                      description={item.description}
                       img={item.img}
                       subtitle={item.subtitle}
                       id={item._id}

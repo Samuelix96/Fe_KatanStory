@@ -39,11 +39,11 @@ const SingleAncientKatana = ({
 
   const [deleteAncientKatane] = useDeleteKataneMutation();
   const handleWish = () => {
-    dispatch(addWish({ id: id, img, title, subtitle, price }));
+    dispatch(addWish({ id: id, img, title, description, subtitle, price }));
     toast.info('Added to wish successfully');
   };
   const handleCart = () => {
-    dispatch(addCart({ id: id, img, title, subtitle, price }));
+    dispatch(addCart({ id: id, img, title, description, subtitle, price }));
     toast.success('added to Cart correctly');
   };
 
@@ -68,7 +68,7 @@ const SingleAncientKatana = ({
           <div className='product-grid rounded-2'>
             <div className='product-image'>
               <a
-                href={`/detailkatane/${id}}`}
+                href={`/detailkatane/${id}`}
                 class='image'>
                 <img
                   className=' rounded-3 p-1 pic-1'
@@ -112,10 +112,12 @@ const SingleAncientKatana = ({
               </ul>
             </div>
             <div className='product-content ms-2'>
-              <h3 className='title'>
+              <h3 className='title_new'>
                 <a href={`/detailkatane/${id}`}>{title}</a>
               </h3>
-              <div className='price me-2'>{price.toFixed(2)}$</div>
+              <div className='price me-2'>{price?.toFixed(2)}$</div>
+              <div className='d-none'>{description}</div>
+              <div className='d-none'>{subtitle}</div>
             </div>
           </div>
         </div>

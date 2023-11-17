@@ -60,7 +60,9 @@ const SingleNewKatana = ({
   };
 
   const handleAddToCart = () => {
-    dispatch(addCart({ id: id, title, price, category, img, description }));
+    dispatch(
+      addCart({ id: id, title, price, category, img, subtitle, description })
+    );
     toast.success('Product added successfully to Cart');
   };
 
@@ -83,8 +85,8 @@ const SingleNewKatana = ({
           <div className='product-grid rounded-2'>
             <div className='product-image'>
               <a
-                href='#'
-                class='image'>
+                href={`/detailkatane/${id}`}
+                className='image'>
                 <img
                   className=' rounded-3 p-1 pic-1'
                   src={img}
@@ -98,7 +100,7 @@ const SingleNewKatana = ({
                 className=' product-like-icon but-new'
                 onClick={handleWish}
                 data-tip='Add to Wishlist'>
-                <i class='far fa-heart'></i>
+                <i className='far fa-heart'></i>
               </button>
               <ul className='product-links'>
                 <li>
@@ -129,12 +131,13 @@ const SingleNewKatana = ({
               </ul>
             </div>
             <div className='product-content ms-2'>
-              <h3 className='title'>
-                <a href='#'>
+              <h3 className='title_new'>
+                <a href={`/detailkatane/${id}`}>
                   {title} / {category}
                 </a>
               </h3>
-              <div className='price me-2'>{price.toFixed(2)}$</div>
+              <div className='price me-2'>{price?.toFixed(2)}$</div>
+              <div className='d-none'>{description}$</div>
             </div>
           </div>
         </div>

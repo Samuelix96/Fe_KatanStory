@@ -8,26 +8,20 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addCart } from '../../reducers/CartSlice';
 import './wish.css';
+import { wishList } from '../../reducers/WishSlice';
 
-const SingleWishList = ({
-  img,
-  location,
-  id,
-  title,
-  price,
-  subtitle,
-  description,
-}) => {
+const SingleWishList = ({ img, id, title, price, subtitle, description }) => {
   console.log('ID IN SINGLEWISh', id);
 
   const dispatch = useDispatch();
-
+  const wish = useSelector(wishList);
+  console.log(wish);
   const handleRemoveWish = () => {
     dispatch(removeWish(id));
   };
 
   const handleMoveCart = () => {
-    dispatch(addCart({ id: id, img, title, price, description }));
+    dispatch(addCart({ id: id, img, title, price, subtitle, description }));
 
     dispatch(removeWish(id));
   };
@@ -56,12 +50,13 @@ const SingleWishList = ({
               </div>
               <div className='mt-1 mb-1 spec-1'>
                 <span className='dot'></span>
-                <span>{subtitle}</span>
+                <span>{description}</span>
+                {subtitle}
               </div>
             </div>
             <div className='align-items-center align-content-center col-md-3 border-left mt-1'>
               <div className='d-flex flex-row align-items-center'>
-                <h4 className='mr-1'>{price.toFixed(2)}$</h4>
+                <h4 className='mr-1'>{price?.toFixed(2)}$</h4>
               </div>
               <h6 className='text-success'>Free shipping</h6>
               <div className='d-flex flex-column mt-4'>

@@ -140,6 +140,7 @@ const SingleDetailKatane = ({
           </div>
         </section>
       </div>
+      <ToastContainer />
     </div>
   );
 };

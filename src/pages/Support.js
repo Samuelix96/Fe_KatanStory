@@ -347,7 +347,7 @@ const Support = () => {
             ) : null}
           </div>
           <Row>
-            <Col className='d-flex gap-3 justify-content-between flex-wrap'>
+            <Col className='supp-colu d-flex gap-3 justify-content-between flex-wrap'>
               {searchTerm && isSearchSuccess ? (
                 supportToDisplay?.map(item => (
                   <SingleSupport
@@ -357,6 +357,8 @@ const Support = () => {
                     category={item.category}
                     img={item.img}
                     id={item._id}
+                    subtitle={item.subtitle}
+                    description={item.description}
                   />
                 ))
               ) : isPostSuccess ? (
@@ -368,6 +370,8 @@ const Support = () => {
                     category={item.category}
                     img={item.img}
                     id={item._id}
+                    subtitle={item.subtitle}
+                    description={item.description}
                   />
                 ))
               ) : IsPostError ? (

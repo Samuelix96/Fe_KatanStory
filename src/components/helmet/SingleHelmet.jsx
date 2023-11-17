@@ -36,21 +36,23 @@ const SingleHelmet = ({ img, id, price, description, title, subtitle }) => {
   };
 
   const handleAddCart = () => {
-    dispatch(addCart({ id: id, title, img, price }));
+    dispatch(addCart({ id: id, title, img, price, description }));
     toast.success('Sending to Cart ');
   };
 
   const handleAddWish = () => {
-    dispatch(addWish({ id: id, title, img, subtitle, price }));
+    dispatch(addWish({ id: id, title, img, subtitle, price, description }));
     toast.info('Sending to Wishlist ');
   };
 
   return (
     <Card className=' text-light card-helmet'>
-      <Card.Img
-        variant='top'
-        src={img}
-      />
+      <a href={`/detailhelmet/${id}`}>
+        <Card.Img
+          variant='top'
+          src={img}
+        />
+      </a>
       <Card.Body className='helmet-body'>
         <a
           className='link-underline link-underline-opacity-0 bg-light-subtle rounded-2 text-dark p-1 '
@@ -59,6 +61,7 @@ const SingleHelmet = ({ img, id, price, description, title, subtitle }) => {
         </a>
         <Card.Title className='my-2'>{title}</Card.Title>
         <Card.Text>{subtitle}</Card.Text>
+        <Card.Text className='d-none'>{description}</Card.Text>
         <Button
           onClick={handleAddWish}
           className='mx-1'

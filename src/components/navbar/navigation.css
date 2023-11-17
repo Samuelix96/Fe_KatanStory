@@ -1,48 +1,48 @@
+/** @format */
+
 .logo-cap {
-    object-fit:fill;
-    aspect-ratio: 1/1;
-    width: 50px;
-    height: 50px;
+  object-fit: fill;
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
 }
 
-.login_box img{
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    margin: 1rem;
-    overflow: hidden;
+.login_box img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin: 1rem;
+  overflow: hidden;
 }
 .img_cart {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
-.img_profile{
-    width: 45px;
-    height: 45px;
-    border-radius: 100%;
-    object-fit: contain;
-   
+.img_profile {
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  object-fit: cover;
 }
 .nav-costume {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 100%;
-    background-image: url(https://img.freepik.com/premium-vector/oriental-style-gray-wave-seamless-pattern-white-background_8087-4957.jpg?size=626&ext=jpg&ga=GA1.1.98934841.1698622056&semt=ais);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100%;
+  background-image: url(https://img.freepik.com/premium-vector/oriental-style-gray-wave-seamless-pattern-white-background_8087-4957.jpg?size=626&ext=jpg&ga=GA1.1.98934841.1698622056&semt=ais);
 }
 
-.home_nav {
-   
+.all-a a {
+  width: 130px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.contact_nav{
-    
-}
-.equi_nav{
-    
-}
-.kata_nav{
-    
-}
-.museum_nav{
-   
+@media screen and (max-width: 440px) {
+  .profilee-menu {
+    position: absolute;
+    right: 20px;
+    left: 5px;
+    background: aqua;
+  }
 }

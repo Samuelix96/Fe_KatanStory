@@ -30,6 +30,7 @@ const Wish = () => {
                 id={item.id}
                 price={item.price}
                 subtitle={item.subtitle}
+                description={item.description}
               />
             );
           })}

@@ -302,6 +302,9 @@
 .sq_box span.wishlist i:hover {
   color: #fd7f34;
 }
+._boxzoom {
+  display: flex;
+}
 
 @media screen and (max-width: 600px) {
   .box-detail {
@@ -321,5 +324,17 @@
       rgba(90, 82, 94, 1) 64%,
       rgba(52, 51, 53, 0.9836134282814688) 96%
     );
+  }
+
+  @media screen and (max-width: 450px) {
+    ._boxzoom ._product-images .picZoomer {
+      width: 100%;
+      height: 456px;
+    }
+  }
+  @media screen and (min-width: 776px) {
+    ._boxzoom {
+      display: flex;
+    }
   }
 }

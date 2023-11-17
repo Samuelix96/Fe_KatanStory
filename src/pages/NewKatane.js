@@ -382,7 +382,7 @@ const NewKatane = () => {
             ) : null}
           </div>
           <Row>
-            <Col className='d-flex justify-content-between align-items-center gap-3 flex-wrap'>
+            <Col className='new-colu d-flex justify-content-between align-items-center gap-3 flex-wrap'>
               {searchTerm && isSearchSuccess ? (
                 katanasToDisplay.map(item => (
                   <SingleNewKatana

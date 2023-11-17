@@ -92,12 +92,6 @@
   color: #aaa;
 }
 
-.contact-text {
-  font: 300 18px 'Lato', sans-serif;
-  letter-spacing: 1.9px;
-  color: #bbb;
-}
-
 .place {
   margin-left: 62px;
 }
@@ -147,6 +141,17 @@
   background-color: rgb(27, 27, 27);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+}
+.back__h1 {
+  background: url(https://www.asianstudies.org/wp-content/uploads/wave-scaled.jpg)
+    no-repeat center center fixed;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  color: #fff;
+  margin-bottom: -1rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-media-list li:after {
@@ -220,6 +225,9 @@ hr {
     float: none;
     margin: 0 auto;
   }
+  .send-button {
+    width: 99%;
+  }
   .form-control,
   textarea {
     margin: 0 auto;
@@ -249,22 +257,30 @@ hr {
     height: 55px;
     line-height: 55px;
   }
-}
-
-@media screen and (max-width: 410px) {
-  .send-button {
-    width: 99%;
+  .alt-send-button {
+    width: 280px;
+    height: 34px;
+    transition: all 0.2s ease-in-out;
   }
 }
 
-.back__h1 {
-  background: url(https://img.freepik.com/free-vector/hand-drawn-japanese-wave-pattern-illustration_23-2149476883.jpg?w=900&t=st=1700079411~exp=1700080011~hmac=09b39ffdbbc885237fe644f65766ab9932fc86ed9456ee0664f03132b921b72a)
-    no-repeat center center fixed;
-  background-size: cover;
-  height: 300px;
-  display: flex;
-  color: #fff;
-  margin-bottom: -1rem;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 700px) {
+  .back__h1 {
+    background: url(https://www.asianstudies.org/wp-content/uploads/wave-scaled.jpg)
+      no-repeat center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+
+    margin-bottom: -1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .back__h1 h1 {
+    text-align: center;
+    color: #fff5f5;
+    border: 2px solid;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #00000061;
+  }
 }

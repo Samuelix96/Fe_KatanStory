@@ -59,7 +59,7 @@ const NavigationHome = () => {
 
   const logout = () => {
     localStorage.clear('token');
-    navigate(`/`);
+    window.location.href = `/`;
   };
 
   useEffect(() => {
@@ -95,11 +95,11 @@ const NavigationHome = () => {
           className='fs-6'
           id='navbarScroll'>
           <Nav
-            className='m-auto d-flex justify-content-center align-items-center '
-            style={{ maxHeight: '200px' }}
+            className='m-auto all-a d-flex justify-content-center align-items-center '
+            style={{ maxHeight: '270px' }}
             navbarScroll>
             <Link
-              className=' home_nav link-underline link-underline-opacity-0 p-3 text-dark fs-5 mx-2'
+              className=' home_nav link-underline link-underline-opacity-0 p-2 text-dark fs-5 mx-1'
               to={`/`}>
               Home
             </Link>
@@ -291,8 +291,8 @@ const NavigationHome = () => {
                     src={session.avatar}
                   />
                   <div className='text__profile'>
-                    <p className='mb-0  '>{session.firstName}</p>
-                    <p className='mb-0'>{session.lastName}</p>
+                    <p className=' fst-italic mb-0  '>{session.firstName}</p>
+                    <p className=' fst-italic mb-0'>{session.lastName}</p>
                   </div>
                 </div>
               ) : (
@@ -308,10 +308,10 @@ const NavigationHome = () => {
               )}
             </Dropdown.Toggle>
 
-            <Dropdown.Menu>
+            <Dropdown.Menu className='profilee-menu'>
               {session ? (
                 <>
-                  <Dropdown.Item>
+                  <Dropdown.Item className=''>
                     <Button className='btn btn-info'>
                       <FontAwesomeIcon
                         className='mx-3'
