@@ -1,0 +1,19 @@
+/** @format */
+
+.sfondo-helmet {
+  background: url(https://www.renderhub.com/gsommer/samurai-helmet-07-brown/samurai-helmet-07-brown-01.jpg)
+    no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sfondo-helmet h1 {
+  font-family: fantasy;
+  border: 2px solid;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}

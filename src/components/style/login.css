@@ -1,0 +1,160 @@
+/** @format */
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+
+.login_container {
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url(https://www.japantimes.co.jp/uploads/imported_images/uploads/2020/02/p10-outside-adachi-a-20200226.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: 'Vibur', cursive;
+  font-family: 'Abel', sans-serif;
+  opacity: 0.95;
+}
+
+.form_login {
+  width: 450px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 5px;
+  margin: 2% auto;
+  box-shadow: 0 9px 50px hsla(15, 2%, 66%, 0.31);
+  padding: 2%;
+  background-image: linear-gradient(-225deg, #d5e7f0 50%, #5c6f8c 50%);
+}
+
+/* form Container */
+.form_login .con {
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+}
+
+.header_login {
+  margin: 2% auto 10% auto;
+  text-align: center;
+}
+
+/* Login title form form */
+.header_login h2 {
+  font-size: 250%;
+  font-family: 'Playfair Display', serif;
+  color: #3e403f;
+}
+
+/*  A welcome message or an explanation of the login form */
+.header_login p {
+  letter-spacing: 0.05em;
+}
+
+.input-item {
+  color: #333;
+  padding: 14.5px 0px 15px 9px;
+  border-radius: 6px 0px 0px 6px;
+}
+
+input[className='form-input'] {
+  width: 240px;
+  height: 50px;
+
+  margin-top: 2%;
+  padding: 15px;
+
+  font-size: 16px;
+  font-family: 'Abel', sans-serif;
+  color: #5e6472;
+
+  outline: none;
+  border: none;
+
+  border-radius: 0px 5px 5px 0px;
+  transition: 0.2s linear;
+}
+
+input:focus {
+  transform: translateX(-2px);
+  border-radius: 5px;
+}
+.mini_sector {
+  display: flex;
+  flex-direction: column;
+}
+
+.button_login {
+  display: inline-block;
+  color: #252537;
+
+  width: 280px;
+  height: 50px;
+
+  padding: 0 20px;
+  background: #fff;
+  border-radius: 5px;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s linear;
+
+  margin: 8% auto;
+  letter-spacing: 0.05em;
+}
+
+.submits {
+  width: 48%;
+  display: inline-block;
+  float: left;
+  margin-left: 2%;
+}
+
+.frgt-pass {
+  background: transparent;
+}
+
+.sign-up {
+  background: #b8f2e6;
+}
+
+.button_login:hover {
+  transform: translatey(3px);
+  box-shadow: none;
+}
+
+/* buttons hover Animation */
+.button_login:hover {
+  animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+@media screen and (max-width: 400px) {
+  .form_login {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 442px) {
+  .form_login {
+    width: 300px;
+  }
+}
+
+@keyframes ani9 {
+  0% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(5px);
+  }
+}

@@ -1,0 +1,19 @@
+/** @format */
+
+.sfondo-new {
+  background: url(https://assets.catawiki.com/image/pr:cw_large/plain/assets/catawiki/assets/2023/8/12/b/0/7/b07ddd19-c954-4285-9d1b-a38d4cdb1138.jpg)
+    no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sfondo-new h1 {
+  font-family: fantasy;
+  border: 2px solid;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}

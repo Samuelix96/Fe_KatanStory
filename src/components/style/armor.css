@@ -1,0 +1,19 @@
+/** @format */
+
+.sfondo-armor {
+  background: url(https://i.pinimg.com/736x/0e/61/84/0e6184d8b66714239dbfc8b99779cb8f.jpg)
+    no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sfondo-armor h1 {
+  font-family: fantasy;
+  border: 2px solid;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}

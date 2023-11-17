@@ -1,0 +1,20 @@
+/** @format */
+
+.card-helmet {
+  width: 18rem;
+}
+.helmet-body {
+  background: rgb(84, 77, 87);
+  background: linear-gradient(
+    41deg,
+    rgba(84, 77, 87, 1) 19%,
+    rgba(53, 51, 53, 1) 26%,
+    rgba(39, 40, 39, 0.9471988624551383) 31%,
+    rgba(40, 41, 40, 1) 39%,
+    rgba(59, 56, 60, 1) 42%,
+    rgba(65, 61, 67, 1) 56%,
+    rgba(90, 82, 94, 1) 64%,
+    rgba(79, 73, 82, 1) 71%,
+    rgba(52, 51, 53, 0.9836134282814688) 88%
+  );
+}

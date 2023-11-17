@@ -1,0 +1,19 @@
+/** @format */
+
+.sfondo-support {
+  background: url(https://cdnb.artstation.com/p/assets/images/images/031/752/791/large/diana-spaka-ps-render-03.jpg?1604501473)
+    no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sfondo-support h1 {
+  font-family: fantasy;
+  border: 2px solid;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: white;
+}
