@@ -1,180 +1,203 @@
-import React, { useState } from 'react'
-import "../components/style/registration.css"
-import { useAddRegistrationMutation } from '../api/apiSlice'
-import { useNavigate } from 'react-router-dom'
+/** @format */
 
-const Registration = () =>
-{
+import React, { useState } from 'react';
+import '../components/style/registration.css';
+import { useAddRegistrationMutation } from '../api/apiSlice';
+import { useNavigate } from 'react-router-dom';
 
-  const navigate = useNavigate()
-  
-  const [ file, setFile ] = useState(null)
-  const [ signinData, setSigninData ] = useState({})
+const Registration = () => {
+  const navigate = useNavigate();
 
+  const [file, setFile] = useState(null);
+  const [signinData, setSigninData] = useState({});
+  const [error, setError] = useState(null);
+  console.log(file);
+  console.log(signinData);
 
-  console.log(file)
-  console.log(signinData)
+  const [addRegistration] = useAddRegistrationMutation();
 
-  const [ addRegistration ] = useAddRegistrationMutation()
-
-
-
-  const handleInputChange = (e) =>
-  {
+  const handleInputChange = e => {
     const { name, value } = e.target;
 
     setSigninData({
       ...signinData,
-      [ name ]: value,
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const handleSetFileChange = (e) => 
-  {
-    setFile(e.target.files[ 0 ])
-  }
+  const handleSetFileChange = e => {
+    setFile(e.target.files[0]);
+  };
 
+  const uploadFile = async avatar => {
+    const fileData = new FormData();
+    console.log(fileData);
+    fileData.append('avatar', avatar);
 
-  const uploadFile = async (avatar) =>
-  {
-    const fileData = new FormData()
-    console.log(fileData)
-    fileData.append("avatar", avatar)
-
-    try
-    {
-      const response = await fetch(`${ process.env.REACT_APP_SERVER_URL }/registration/cloudUpload`, {
-        method: 'POST',
-        body: fileData
-      });
-      if (response.status === 200)
-      {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER_URL}/registration/cloudUpload`,
+        {
+          method: 'POST',
+          body: fileData,
+        }
+      );
+      if (response.status === 200) {
         return response.json();
-      } else
-      {
+      } else {
         throw new Error('Errore nella chiamata post del file con cloudinary');
       }
-    } catch (error)
-    {
-      console.log("errore nella chiamata post del file", error)
+    } catch (error) {
+      console.log('errore nella chiamata post del file', error);
     }
-  }
+  };
 
-  const sendPost = async (e) =>
-  {
+  const sendPost = async e => {
     e.preventDefault();
-    if (file)
-    {
-      try
-      {
+
+    if (
+      !signinData.firstName ||
+      !signinData.lastName ||
+      !signinData.nickName ||
+      !signinData.email ||
+      !signinData.password ||
+      !signinData.birth ||
+      !file
+    ) {
+      setTimeout(() => {
+        setError(
+          'All fields are required, please check if you added all fields'
+        );
+        return;
+      }, 2000);
+    }
+
+    if (file) {
+      try {
         const uploadAvatar = await uploadFile(file);
         const finalBody = {
           ...signinData,
           avatar: uploadAvatar.avatar,
         };
-        await addRegistration(finalBody);
-        setSigninData({})
-        setFile(null);
-        setTimeout(() =>
-        {
-          navigate('/login');
-        }, 1000);
-      } catch (error)
-      {
-        console.log('errore nell\'invio del post', error);
+        const response = await addRegistration(finalBody);
+        if (response.data) {
+          setSigninData({});
+          setFile(null);
+          setTimeout(() => {
+            navigate('/login');
+          }, 1000);
+        } else {
+          setError('Error internal all Input are Required');
+        }
+      } catch (error) {
+        console.log("errore nell'invio del post", error);
       }
     }
   };
 
-
   return (
     <div className='form__regi'>
-      <form 
-      onSubmit={sendPost}
-      class="form">
-        <p class="title">Registration  </p>
-        <p class="message">Signup now and get full access to our app. </p>
-        <div class="flex">
+      <div className=''>
+        <form
+          onSubmit={sendPost}
+          class='form'>
+          <p class='title'>Registration </p>
+          <p class='message'>Signup now and get full access to our app. </p>
+          <div class='flex'>
+            <label>
+              <input
+                class='input'
+                type='text'
+                name='firstName'
+                onChange={handleInputChange}
+                placeholder='FirstName'
+                required=''
+              />
+
+              <span>Firstname</span>
+            </label>
+
+            <label>
+              <input
+                class='input'
+                type='text'
+                name='lastName'
+                onChange={handleInputChange}
+                placeholder='LastName'
+                required=''
+              />
+              <span>Lastname</span>
+            </label>
+          </div>
           <label>
             <input
-              class="input"
-              type="text"
-              name='firstName'
-              onChange={ handleInputChange }
-              placeholder="FirstName"
-              required="" />
-
-            <span>Firstname</span>
+              class='input'
+              type='text'
+              name='nickName'
+              onChange={handleInputChange}
+              placeholder='Your Nickname'
+              required=''
+            />
+            <span>NickName</span>
+          </label>
+          <label>
+            <input
+              class='input'
+              type='email'
+              name='email'
+              onChange={handleInputChange}
+              placeholder='Email'
+              required=''
+            />
+            <span>Email</span>
+          </label>
+          <label>
+            <input
+              class='input'
+              type='password'
+              name='password'
+              onChange={handleInputChange}
+              placeholder='Password'
+              required=''
+            />
+            <span>Password</span>
           </label>
 
           <label>
             <input
-              class="input"
-              type="text"
-              name='lastName'
-              onChange={ handleInputChange }
-              placeholder="LastName"
-              required="" />
-            <span>Lastname</span>
+              class='input'
+              type='date'
+              name='birth'
+              onChange={handleInputChange}
+              placeholder='Your full Birth'
+              required=''
+            />
+            <span>Birth</span>
           </label>
-        </div>
-        <label>
-          <input
-            class="input"
-            type="text"
-            name='nickName'
-            onChange={ handleInputChange }
-            placeholder="Your Nickname"
-            required="" />
-          <span>NickName</span>
-        </label>
-        <label>
-          <input
-            class="input"
-            type="email"
-            name="email"
-            onChange={ handleInputChange }
-            placeholder="Email"
-            required="" />
-          <span>Email</span>
-        </label>
-        <label>
-          <input
-            class="input"
-            type="password"
-            name='password'
-            onChange={ handleInputChange }
-            placeholder="Password"
-            required="" />
-          <span>Password</span>
-        </label>
-
-        <label>
-          <input
-            class="input"
-            type="date"
-            name='birth'
-            onChange={ handleInputChange }
-            placeholder="Your full Birth"
-            required="" />
-          <span>Birth</span>
-        </label>
-        <label>
-          <input
-            class="input"
-            type="file"
-            name='avatar'
-            onChange={ handleSetFileChange }
-            placeholder="Img about yourself"
-            required="" />
-          <span>Avatar</span>
-        </label>
-
-        <button type='submit' class="submit">Submit</button>
-        <p class="signin">Already have an acount ? <a href={ `/login` }>Signin</a> </p>
-      </form>
+          <label>
+            <input
+              class='input'
+              type='file'
+              name='avatar'
+              onChange={handleSetFileChange}
+              placeholder='Img about yourself'
+              required=''
+            />
+            <span>Avatar</span>
+          </label>
+          {error && <div className='alert alert-danger mb-3'>{error}</div>}
+          <button
+            type='submit'
+            class='submit'>
+            Submit
+          </button>
+          <p class='signin'>
+            Already have an acount ? <a href={`/login`}>Signin</a>{' '}
+          </p>
+        </form>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Registration
+export default Registration;

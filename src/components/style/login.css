@@ -3,9 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
 
 .login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  overflow: hidden;
-
   background-image: url(https://www.japantimes.co.jp/uploads/imported_images/uploads/2020/02/p10-outside-adachi-a-20200226.jpg);
   background-position: center;
   background-repeat: no-repeat;

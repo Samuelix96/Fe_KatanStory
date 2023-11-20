@@ -22,6 +22,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { useSession } from '../../hooks/AuthSession';
 import { wishList } from '../../reducers/WishSlice';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { Xbox } from 'react-bootstrap-icons';
 
 const NavigationHome = () => {
   const navigate = useNavigate();
@@ -214,7 +215,7 @@ const NavigationHome = () => {
                     variant='red'
                     className='btn-primary btn-danger'
                     onClick={handleCloseWish}>
-                    Close menu
+                    <FontAwesomeIcon icon='fa-solid fa-x' />
                   </Button>
                 </Dropdown.Item>
               </div>
@@ -269,7 +270,7 @@ const NavigationHome = () => {
                     variant='red'
                     className='btn btn btn-danger'
                     onClick={handleCloseShow}>
-                    Close menu
+                    <FontAwesomeIcon icon='fa-solid fa-x' />
                   </Button>
                 </Dropdown.Item>
               </div>

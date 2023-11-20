@@ -23,7 +23,7 @@ const Carousels = () => {
           <span class='btn-txt'>Read more in our Museum</span>
         </button>
       </div>
-      <div className='container-fluid'>
+      <div className=' my-4 container-fluid'>
         <Carousel
           showThumbs={false}
           dynamicHeight={true}

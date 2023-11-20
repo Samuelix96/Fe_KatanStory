@@ -10,6 +10,11 @@
     #42b59c
   );
 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -160,6 +165,12 @@ h6 {
   width: 120px;
   height: 90px;
 }
-.card-user {
-  width: 800px !important;
+@media screen and (max-width: 1300px) {
+  .card-user {
+    width: 100% !important;
+  }
+  .m-b-25 img {
+    width: 120px;
+    height: 90px;
+  }
 }
