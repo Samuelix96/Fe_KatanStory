@@ -15,9 +15,11 @@
   color: white;
   text-align: center;
   margin-top: 4rem;
+  margin: 2rem;
+  padding-inline: 15rem;
 }
 .button {
-  height: 50px;
+  height: 80px;
   width: 200px;
   position: relative;
   background-color: transparent;
@@ -33,6 +35,7 @@
   z-index: 1;
   font-weight: 800;
   letter-spacing: 2px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .type1::after {
