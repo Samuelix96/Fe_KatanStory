@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import '../components/style/registration.css';
 import { useAddRegistrationMutation } from '../api/apiSlice';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -81,11 +82,12 @@ const Registration = () => {
         };
         const response = await addRegistration(finalBody);
         if (response.data) {
+          toast.success('Creation new account Successfully');
           setSigninData({});
           setFile(null);
           setTimeout(() => {
             navigate('/login');
-          }, 1000);
+          }, 3000);
         } else {
           setError('Error internal all Input are Required');
         }
@@ -195,6 +197,7 @@ const Registration = () => {
             Already have an acount ? <a href={`/login`}>Signin</a>{' '}
           </p>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
